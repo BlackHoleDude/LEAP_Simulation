@@ -1,0 +1,310 @@
+# ---------------------------------------------------------------------
+# Verbosity
+#
+/control/verbose 1
+/event/verbose 0
+/process/verbose 0
+/run/verbose 0
+
+# ---------------------------------------------------------------------
+# Control MultiThreading
+#
+/run/numberOfThreads 20
+/control/cout/ignoreThreadsExcept 0
+
+
+# ---------------------------------------------------------------------
+# Physics
+#
+/user/phy/setPhysics Option0
+#/user/phy/setPhysics Option1
+#/user/phy/setPhysics Option2
+
+
+# ---------------------------------------------------------------------
+# Initialize Run
+#
+/run/initialize
+
+# ---------------------------------------------------------------------
+# Particle: Gamma 
+#
+/gps/particle gamma
+
+# ---------------------------------------------------------------------
+# Gamma Energy
+#
+/gps/ene/mono 226.0 keV
+
+# Source Geometry
+#
+/gps/pos/type   Plane
+/gps/pos/shape  Circle
+/gps/pos/radius 90. cm
+
+
+
+# ---------------------------------------------------------------------
+# RANDOM NUMBER
+#
+/random/setSeeds 923255 821552
+
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =     0.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+# /gps/pos/rot1      0.0000000000     0.0000000000     0.0000000000
+# /gps/pos/rot2      0.0000000000     0.0000000000     0.0000000000
+/gps/pos/centre    0.0000000000     0.0000000000   200.0000000000   cm
+/gps/direction     0.0000000000     0.0000000000    -1.0000000000
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN00-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN00-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# 
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    10.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.1710100717     0.0000000000     0.0301536896
+/gps/pos/rot2      0.0000000000     0.1736481777     0.0000000000
+/gps/pos/centre   34.7296355334     0.0000000000   196.9615506024   cm
+/gps/direction    -0.1736481777     0.0000000000    -0.9848077530
+# 
+#
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN10-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN10-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# 
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    20.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.3213938048     0.0000000000     0.1169777784
+/gps/pos/rot2      0.0000000000     0.3420201433     0.0000000000
+/gps/pos/centre   68.4040286651     0.0000000000   187.9385241572   cm
+/gps/direction    -0.3420201433     0.0000000000    -0.9396926208
+# 
+#
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN20-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN20-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    30.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.4330127019     0.0000000000     0.2500000000
+/gps/pos/rot2      0.0000000000     0.5000000000     0.0000000000
+/gps/pos/centre  100.0000000000     0.0000000000   173.2050807569   cm
+/gps/direction    -0.5000000000     0.0000000000    -0.8660254038
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN30-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN30-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    40.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.4924038765     0.0000000000     0.4131759112
+/gps/pos/rot2      0.0000000000     0.6427876097     0.0000000000
+/gps/pos/centre  128.5575219373     0.0000000000   153.2088886238   cm
+/gps/direction    -0.6427876097     0.0000000000    -0.7660444431
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN40-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN40-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    50.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.4924038765     0.0000000000     0.5868240888
+/gps/pos/rot2      0.0000000000     0.7660444431     0.0000000000
+/gps/pos/centre  153.2088886238     0.0000000000   128.5575219373   cm
+/gps/direction    -0.7660444431     0.0000000000    -0.6427876097
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN50-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN50-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    60.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.4330127019     0.0000000000     0.7500000000
+/gps/pos/rot2      0.0000000000     0.8660254038     0.0000000000
+/gps/pos/centre  173.2050807569     0.0000000000   100.0000000000   cm
+/gps/direction    -0.8660254038     0.0000000000    -0.5000000000
+# 
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN60-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN60-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+
+# 
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =    70.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+/gps/pos/rot1     -0.3213938048     0.0000000000     0.8830222216
+/gps/pos/rot2      0.0000000000     0.9396926208     0.0000000000
+/gps/pos/centre  187.9385241572     0.0000000000    68.4040286651   cm
+/gps/direction    -0.9396926208     0.0000000000    -0.3420201433
+# 
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN70-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-SMONO-E0226-AZI000-ZEN70-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+## redirect output from each thread
+/control/cout/setCoutFile leap.out
+/control/cout/setCerrFile leap.err
+
+## Verbosity
+/control/verbose 0
+/process/verbose 0
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 1000
+
+## Change the default number of threads (in multi-threaded mode)
+/run/numberOfThreads 2
+
+## Overlap Checking
+/user/det/setOverlapChecking false
+
+## Physics
+/user/phy/setPhysics Option0
+#/user/phy/setPhysics Option1
+#/user/phy/setPhysics Option2
+
+
+## Initialize kernel
+/run/initialize
+
+## Source Particle
+/gps/particle gamma
+/gps/energy 662 keV
+
+## Source Geometry
+/gps/pos/centre 0. 0. 1121. mm
+/gps/ang/type iso
+/gps/ang/mintheta 0. deg
+/gps/ang/maxtheta 15. deg
+/gps/ang/minphi 0. deg
+/gps/ang/maxphi 360. deg
+
+## Change file name
+/analysis/setFileName ../data/test1.root
+
+## Random number
+/random/setSeeds 101 101
+
+## Start run
+/run/beamOn 10000

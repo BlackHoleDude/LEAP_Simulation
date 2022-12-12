@@ -1,0 +1,168 @@
+# **************************************************************************************
+# VERBOSITY
+#
+/control/verbose 1
+/event/verbose 0
+/process/verbose 0
+/run/verbose 0
+
+# **************************************************************************************
+# CONTROL MULTI-THREADING
+# (assumes that GEANT4 has been built with multi-threading turned on)
+#
+# Specify number of threads (number of CPU cores)
+#
+/run/numberOfThreads 8
+
+#
+# The output from only this thread is displayed.
+#
+/control/cout/ignoreThreadsExcept 0
+
+
+# **************************************************************************************
+# SPECIFY PHYSICS LIST
+#
+# --- Option0: Electromagnetic"
+#     G4DecayPhysics
+#     G4EmLivermorePolarizedPhysics
+#
+# --- Option1: Electromagnetic & Hadronic
+#     G4DecayPhysics
+#     G4EmStandardPhysics_option4
+#     G4HadronPhysicsFTFP_BERT
+#     G4HadronElasticPhysics
+#     G4IonPhysics
+#     G4StoppingPhysics
+#     G4EmExtraPhysics
+#
+# --- Option2: Electromagnetic & Hadronic with high precision option
+#     G4DecayPhysics
+#     G4EmStandardPhysics_option4
+#     G4HadronPhysicsFTFP_BERT_HP
+#     G4HadronElasticPhysicsHP
+#     G4IonPhysicsXS
+#     G4IonElasticPhysics
+#     G4StoppingPhysics
+#     G4NeutronTrackingCut
+#     G4EmExtraPhysics
+#     G4RadioactiveDecayPhysics
+#
+#/user/phy/setPhysics Option0
+#/user/phy/setPhysics Option1
+/user/phy/setPhysics Option2
+
+
+# **************************************************************************************
+# INITIALIZE RUN
+#
+/run/initialize
+
+# **************************************************************************************
+# SPECIFY BEAM PARTICLE TYPE
+#
+# /gps/particle gamma
+# /gps/particle e-
+# /gps/particle e+
+# /gps/particle neutron
+/gps/particle proton
+# /gps/particle alpha
+
+
+# **************************************************************************************
+# SPECIFY SOURCE GEOMETRY
+#
+/gps/pos/type Surface
+/gps/pos/shape Sphere
+/gps/pos/radius 100. cm
+/gps/ang/type cos
+
+#
+# The theta distribution is in terms of cos(theta).
+# At an altitude of 400 km, the horizon is at 108.76° zenith.
+#
+#----------------------
+# For COSMIC flux and Primary Cosmic Rays, 
+# we have a zenith angle range of 0.0 to 108.76 degrees.
+# This corresponds to a range in cosine from 1.0 to -0.3216.
+# This corresponds to range from 0.0 to 0.6608 on a scale from 0 to 1.
+#
+/gps/hist/type biaspt
+/gps/hist/point 0.0     0.0
+/gps/hist/point 0.6608  1.0
+/gps/hist/point 1.0     0.0
+#
+#----------------------
+# For ALBEDO flux, we have a zenith angle range of 108.76 to 180 degrees.
+# This corresponds to a range in cosine from -0.3216 to -1.0.
+# This corresponds to range from 0.6608 to 1.0 on a scale from 0 to 1.
+#
+# /gps/hist/type biaspt
+# /gps/hist/point 0.0     0.0
+# /gps/hist/point 0.6608  0.0
+# /gps/hist/point 1.0     1.0
+#
+#----------------------
+# For ISOTROPIC flux, we have a zenith angle range of 0 to 180 degrees.
+# This corresponds to a range in cosine from +1.0 to -1.0.
+# This corresponds to range from 0.0 to 1.0 on a scale from 0 to 1.
+#
+# /gps/hist/type biaspt
+# /gps/hist/point 0.0     0.0
+# /gps/hist/point 1.0     1.0
+#
+#----------------------
+# For DOWNWARD flux, we have a zenith angle range of 0 to 90 degrees.
+# This corresponds to a range in cosine from +1.0 to 0.0.
+# This corresponds to range from 0.0 to 0.5 on a scale from 0 to 1.
+#
+# /gps/hist/type biaspt
+# /gps/hist/point 0.0     0.
+# /gps/hist/point 0.5     1.
+# /gps/hist/point 1.0     0.
+#
+#----------------------
+# For UPWARD flux, we have a zenith angle range of 90 to 180 degrees.
+# This corresponds to a range in cosine from 0.0 to -1.0.
+# This corresponds to range from 0.5 to 1.0 on a scale from 0 to 1.
+#
+# /gps/hist/type biaspt
+# /gps/hist/point 0.0     0.
+# /gps/hist/point 0.5     0.
+# /gps/hist/point 1.0     1.
+
+
+
+# **************************************************************************************
+# SPECIFY SOURCE ENERGY SPECTRUM
+#
+/gps/ene/type Arb
+# /gps/hist/file ../Spectra/AlbedoPhotons_400km_52deg.txt
+# /gps/hist/file ../Spectra/AtmosphericNeutrons_400km_52deg.txt
+# /gps/hist/file ../Spectra/CosmicPhotons_400km_52deg.txt
+# /gps/hist/file ../Spectra/PrimaryAlphas_400km_52deg.txt
+# /gps/hist/file ../Spectra/PrimaryElectrons_400km_52deg.txt
+# /gps/hist/file ../Spectra/PrimaryPositrons_400km_52deg.txt
+/gps/hist/file ../Spectra/PrimaryProtons_400km_52deg.txt
+# /gps/hist/file ../Spectra/SecondaryElectrons_400km_52deg.txt
+# /gps/hist/file ../Spectra/SecondaryPositrons_400km_52deg.txt
+# /gps/hist/file ../Spectra/SecondaryProtonsDownward_400km_52deg.txt
+# /gps/hist/file ../Spectra/SecondaryProtonsUpward_400km_52deg.txt
+/gps/hist/inter Log
+
+# **************************************************************************************
+# RANDOM NUMBER
+#
+/random/setSeeds 548258 365429
+
+
+# **************************************************************************************
+# RUN PARAMETERS
+#
+
+/analysis/setFileName ../data/LEAP213-SBGND-PrimaryProtons-ALT400-INC52-R001
+/run/printProgress 100000
+/run/beamOn 100000000
+
+
+

@@ -1,0 +1,29 @@
+## redirect output from each thread
+/control/cout/setCoutFile leap.out
+/control/cout/setCerrFile leap.err
+
+## Verbosity
+/control/verbose 0
+/process/verbose 0
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+/run/printProgress 1000
+
+## Change the default number of threads (in multi-threaded mode)
+/run/numberOfThreads 8
+
+## Overlap Checking
+/user/det/setOverlapChecking false
+
+## Physics
+/user/phy/setPhysics Option0
+#/user/phy/setPhysics Option1
+#/user/phy/setPhysics Option2
+
+## Initialize kernel
+/run/initialize
+
+## Visualization setting
+/control/execute ../macros/vis.mac
+

@@ -1,0 +1,133 @@
+# **************************************************************************************
+# VERBOSITY
+#
+/control/verbose 1
+/event/verbose 0
+/process/verbose 0
+/run/verbose 0
+
+# **************************************************************************************
+# CONTROL MULTI-THREADING
+# (assumes that GEANT4 has been built with multi-threading turned on)
+#
+# Specify number of threads (number of CPU cores)
+#
+/run/numberOfThreads 2
+
+#
+# The output from only this thread is displayed.
+#
+/control/cout/ignoreThreadsExcept 0
+
+
+# **************************************************************************************
+# SPECIFY PHYSICS LIST
+#
+# --- Option0: Electromagnetic
+#     G4DecayPhysics
+#     G4EmLivermorePolarizedPhysics
+#
+# --- Option1: Electromagnetic & Hadronic
+#     G4DecayPhysics
+#     G4EmStandardPhysics_option4
+#     G4HadronPhysicsFTFP_BERT
+#     G4HadronElasticPhysics
+#     G4IonPhysics
+#     G4StoppingPhysics
+#     G4EmExtraPhysics
+#
+# --- Option2: Electromagnetic & Hadronic with high precision option
+#     G4DecayPhysics
+#     G4EmStandardPhysics_option4
+#     G4HadronPhysicsFTFP_BERT_HP
+#     G4HadronElasticPhysicsHP
+#     G4IonPhysicsXS
+#     G4IonElasticPhysics
+#     G4StoppingPhysics
+#     G4NeutronTrackingCut
+#     G4EmExtraPhysics
+#     G4RadioactiveDecayPhysics
+#
+/user/phy/setPhysics Option0
+#/user/phy/setPhysics Option1
+#/user/phy/setPhysics Option2
+
+
+# **************************************************************************************
+# INITIALIZE RUN
+#
+/run/initialize
+
+# **************************************************************************************
+# SPECIFY BEAM PARTICLE TYPE
+#
+/gps/particle gamma
+# /gps/particle e-
+# /gps/particle e+
+# /gps/particle neutron
+# /gps/particle proton
+# /gps/particle alpha
+
+
+# **************************************************************************************
+# SPECIFY SOURCE ENERGY SPECTRUM
+#
+/gps/ene/type Pow
+/gps/ene/alpha -2.17
+/gps/ene/min 5.0 keV
+/gps/ene/max 20.0 MeV
+
+
+# **************************************************************************************
+# SPECIFY SOURCE GEOMETRY
+#
+/gps/pos/type   Plane
+/gps/pos/shape  Circle
+/gps/pos/radius 90. cm
+
+
+# **************************************************************************************
+# RANDOM NUMBER
+#
+/random/setSeeds 923255 821552
+
+
+# **************************************************************************************
+# RUN PARAMETERS
+#
+#  Zenith   =     0.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+# /gps/pos/rot1      0.0000000000     0.0000000000     0.0000000000
+# /gps/pos/rot2      0.0000000000     0.0000000000     0.0000000000
+/gps/pos/centre    0.0000000000     0.0000000000   200.0000000000   cm
+/gps/direction     0.0000000000     0.0000000000    -1.0000000000
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP201-SPOWL-E0217-AZI000-ZEN00-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 1000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP201-SPOWL-E0217-AZI000-ZEN00-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 1000000
+
+
+
+
+
+
+
+
+
+
+

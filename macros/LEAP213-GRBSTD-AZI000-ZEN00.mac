@@ -1,0 +1,93 @@
+# ---------------------------------------------------------------------
+# Verbosity
+#
+/control/verbose 1
+/event/verbose 0
+/process/verbose 0
+/run/verbose 0
+
+# ---------------------------------------------------------------------
+# Control MultiThreading
+#
+/run/numberOfThreads 8
+/control/cout/ignoreThreadsExcept 0
+
+
+# ---------------------------------------------------------------------
+# Physics
+#
+/user/phy/setPhysics Option0
+#/user/phy/setPhysics Option1
+#/user/phy/setPhysics Option2
+
+
+# ---------------------------------------------------------------------
+# Initialize Run
+#
+/run/initialize
+
+# ---------------------------------------------------------------------
+# Particle: Gamma 
+#
+/gps/particle gamma
+
+# **************************************************************************************
+# SPECIFY SOURCE ENERGY SPECTRUM
+#
+/gps/ene/type Arb
+/gps/hist/file ../Spectra/GRBSPEC-BAND-STD.txt
+/gps/hist/inter Log
+
+# Source Geometry
+#
+/gps/pos/type   Plane
+/gps/pos/shape  Circle
+/gps/pos/radius 90. cm
+
+
+
+# ---------------------------------------------------------------------
+# RANDOM NUMBER
+#
+/random/setSeeds 923255 821552
+
+
+# ---------------------------------------------------------------------
+# GPS Source Parameters
+# 
+#  Zenith   =     0.00 degs
+#  Azimuth  =     0.00 degs
+#  Distance =   200.00 cm
+# 
+# /gps/pos/rot1      0.0000000000     0.0000000000     0.0000000000
+# /gps/pos/rot2      0.0000000000     0.0000000000     0.0000000000
+/gps/pos/centre    0.0000000000     0.0000000000   200.0000000000   cm
+/gps/direction     0.0000000000     0.0000000000    -1.0000000000
+# 
+# 
+# ---------------------------------------------------------------------
+# Polarized Run
+# 
+/gps/polarization      0.0000000000     1.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP201-GRBSTD-AZI000-ZEN00-PD100-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+# 
+# ---------------------------------------------------
+# Unpolarized Run
+# 
+/gps/polarization      0.0000000000     0.0000000000     0.0000000000
+/analysis/setFileName ../data/LEAP213-GRBSTD-AZI000-ZEN00-PD000-PA000
+/run/printProgress 100000
+/run/beamOn 10000000
+
+
+
+
+
+
+
+
+
+
+
