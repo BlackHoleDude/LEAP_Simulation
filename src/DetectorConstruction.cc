@@ -1964,7 +1964,7 @@ namespace leap
 
 
 	//  logical volume
-		G4LogicalVolume* ShieldA_ECOShield_log = new G4LogicalVolume( ShieldA_ECOShield_sol, mSn, "ShieldA_ECOShield_log", 0, 0, 0 );
+		G4LogicalVolume* ShieldA_ECOShield_log = new G4LogicalVolume( ShieldA_ECOShield_sol, mECO, "ShieldA_ECOShield_log", 0, 0, 0 );
 	
 	//  physical volume positions
 	
